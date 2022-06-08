@@ -34,8 +34,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       if (solveres.status != 0)
         return res.status(400).json({
           success: false,
-          // error: `Solve failed: Singular Matrix`
-          error: `Solve failed: ${solveres.stderr.toString()}`
+          error: `Solve failed: Singular Matrix`
+          // error: `Solve failed: ${solveres.stderr.toString()}`
         })
 
       const ans = solveres.stdout.toString().replace(/[\n\r]/g, '').match(/\(array\((\[\[\[.+\]\]\])\), ([\d.]+)\)/)
