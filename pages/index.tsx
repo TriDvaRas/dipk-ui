@@ -162,6 +162,9 @@ const Home: NextPage = () => {
                         }
                     </Form.Group>
                     <Button type='submit' disabled={isSolving}>{isSolving ? <Spinner animation='border' /> : `Решить`}</Button>
+                    {error && <Form.Text className="text-danger">
+                        {error}
+                    </Form.Text>}
                 </Form>
 
             </Card.Body>
